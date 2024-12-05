@@ -37,3 +37,17 @@ searchInput.addEventListener('input', function() {
       linkList.innerHTML = "";
    }
 });
+
+//Handle Pagination
+function handlePagination(list) {
+   const numberBtns = Math.ceil(list.length / itemsOnPage);
+   linkList.innerHTML = "";
+
+   for (let i = 1; i <= numberBtns; i++) {
+      const btnMarkup = `<li><button>${i}</button></li>`;
+      linkList.insertAdjacentHTML("beforeend", btnMarkup);
+   }
+
+   const firstBtn = linkList.querySelector("button");
+   if (firstBtn) firstBtn.classList.add("active");
+}
