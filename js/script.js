@@ -51,3 +51,28 @@ function handlePagination(list) {
    const firstBtn = linkList.querySelector("button");
    if (firstBtn) firstBtn.classList.add("active");
 }
+
+//Create showPage function
+function showPage(list, page) {
+   const start = (page * itemsOnPage) - itemsOnPage;
+   const end = page * itemsOnPage;
+
+   ul.innerHTML = "";
+
+   for (let i = 0; i < list.length; i++) {
+      if (i >= start && i < end) {
+         const studentsList = `
+         <li class="student-item cf">
+         <div class+"student-details">
+            <img src=${list[i].picture.medium} alt="Profile Picture" class="avatar"`
+            <h3>${list[i].name.title} ${list[i].name.first} ${list[i].name.last}</h3>
+            <span class="email">${list[i].email}</span>
+         </div>
+         <div class="joined-details">
+            <span class="date">Joined ${list[i].registered.date}</span>
+         </div>
+      </li>
+            ul.insertAdjacentHTML('beforeend', studentsList)
+      }
+   }
+};
