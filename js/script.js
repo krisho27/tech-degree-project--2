@@ -63,7 +63,7 @@ function showPage(list, page) {
       if (i >= start && i < end) {
          const studentsList = `
          <li class="student-item cf">
-         <div class+"student-details">
+         <div class="student-details">
             <img src=${list[i].picture.medium} alt="Profile Picture" class="avatar"`
             <h3>${list[i].name.title} ${list[i].name.first} ${list[i].name.last}</h3>
             <span class="email">${list[i].email}</span>
