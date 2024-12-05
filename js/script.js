@@ -15,26 +15,18 @@ const ul = document.getElementsByClassName('student-list')[0];
 const itemsOnPage = 9;
 
 
-/*
-For assistance:
-   Check out the "Project Resources" section of the Instructions tab: https://teamtreehouse.com/projects/data-pagination-and-filtering#instructions
-   Reach out in your Slack community: https://treehouse-fsjs-102.slack.com/app_redirect?channel=unit-2
-*/
 
+//Search
+searchInput.addEventListener('input', function() {
+   const newData = [];
+   const userInput = searchInput.ariaValueMax.toLowerCase();
 
+   for (let i = 0; 1 < studentList.length; i++) {
+      const studentsName = `${data[i].name.title} ${data[i].name.first} ${data[i].name.last}`.toLowerCase();
+      if (studentsName.includes(userInput)) {
+         newData.push(studentList[i]);
+      }
+   }
 
-/*
-Create the `showPage` function
-This function will create and insert/append the elements needed to display a "page" of nine students
-*/
-
-
-
-/*
-Create the `addPagination` function
-This function will create and insert/append the elements needed for the pagination buttons
-*/
-
-
-
-// Call functions
+   
+})
