@@ -19,7 +19,7 @@ const itemsOnPage = 9;
 //Search
 searchInput.addEventListener('input', function() {
    const newData = [];
-   const userInput = searchInput.ariaValueMax.toLowerCase();
+   const userInput = searchInput.value.toLowerCase();
 
    for (let i = 0; 1 < studentList.length; i++) {
       const studentsName = `${data[i].name.title} ${data[i].name.first} ${data[i].name.last}`.toLowerCase();
