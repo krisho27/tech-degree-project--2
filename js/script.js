@@ -1,8 +1,6 @@
-/*
-Treehouse Techdegree:
-FSJS Project 2 - Data Pagination and Filtering
-*/
 const studentList = data;
+const linkList = document.getElementsByClassName('link-list')[0];
+const header = document.querySelector('.header');
 
 
 /*
