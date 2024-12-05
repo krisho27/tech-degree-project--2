@@ -28,5 +28,12 @@ searchInput.addEventListener('input', function() {
       }
    }
 
-   
-})
+   if (newData.length > 0) {
+      handlePagination(newData);
+      showPage(newData, 1);
+   } else {
+      const html = "<h3>No Results Found...</h3>";
+      ul.innerHTML = html;
+      linkList.innerHTML = "";
+   }
+});
