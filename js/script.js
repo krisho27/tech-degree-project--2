@@ -108,3 +108,7 @@ linkList.addEventListener("click", (e) => {
       showPage(studentsList, buttonClicked.innerHTML);
    }
 });
+
+//Call showPage
+showPage(studentsList, 1);
+addPagination(studentsList);
