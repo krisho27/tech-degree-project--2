@@ -21,7 +21,7 @@ searchInput.addEventListener('input', function() {
    const newData = [];
    const userInput = searchInput.value.toLowerCase();
 
-   for (let i = 0; 1 < studentList.length; i++) {
+   for (let i = 0; i < studentList.length; i++) {
       const studentsName = `${data[i].name.title} ${data[i].name.first} ${data[i].name.last}`.toLowerCase();
       if (studentsName.includes(userInput)) {
          newData.push(studentList[i]);
