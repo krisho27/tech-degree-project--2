@@ -1,4 +1,4 @@
-const studentsList = data; //call data
+const studentsList = data;
 const linkList = document.getElementsByClassName('link-list')[0];
 const header = document.querySelector('.header');
 const searchBarHTML = `
@@ -16,13 +16,12 @@ const itemsPerPage = 9;
 
 
 
-//search input
+//search
 searchInput.addEventListener('input', function() {
    const newData = [];
    const userInput = searchInput.value.toLowerCase();
 
    for (let i = 0; i < studentsList.length; i++) {
-      //need to seperate the names out since it's 3 fields
       const studentName = `${data[i].name.title} ${data[i].name.first} ${data[i].name.last}`.toLowerCase();
 
        if (studentName.includes(userInput)) {
@@ -55,10 +54,7 @@ function handlePagination(list) {
 }
 
 
-/*
-Create the `showPage` function
-This function will create and insert/append the elements needed to display a "page" of nine students
-*/
+//Create showPage 
 function showPage(list, page) {
 
    const start = (page * itemsPerPage) - itemsPerPage;
@@ -84,3 +80,31 @@ function showPage(list, page) {
       }
    }
 };
+
+function addPagination(list) {
+   const numberButtons = Math.ceil(list.length / itemsPerPage);
+   linkList.innerHTML = "";
+
+   for (let i = 1; i <= numberButtons; i++) {
+      const buttonMarkup = `<li>
+      <button type="button">${i}</button>
+      </li>`;
+
+      linkList.insertAdjacentHTML("beforeend", buttonMarkup);
+      linkList.querySelector("button").classList.add("active");
+   }
+}
+
+//Call the functions
+linkList.addEventListener("click", (e) => {
+   const buttonClicked = e.target.closest("button");
+   if (buttonClicked) {
+      const activeButton = linkList.querySelector(".active");
+
+      if (activeButton) {
+         activeButton.classList.remove("active");
+      }
+      buttonClicked.classList.add("active");
+      showPage(studentsList, buttonClicked.innerHTML);
+   }
+});
